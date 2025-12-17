@@ -1,0 +1,12 @@
+services:
+    db:
+        image: postgres
+        env_file:
+            - .env
+
+    web:
+        build: .
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8000:8000"
